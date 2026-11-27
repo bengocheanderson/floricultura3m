@@ -1,0 +1,1275 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#94194f">
+
+  <meta name="description" content="Flores, plantas e vasos para presentear e transformar ambientes. Conheça a Floricultura Três Marias, na Vila Nova, Porto Alegre.">
+
+  <title>Floricultura Três Marias | Flores que encantam</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       CONFIGURAÇÕES GERAIS
+    ========================= */
+
+    :root {
+      --rosa: #94194f;
+      --rosa-escuro: #651238;
+      --rosa-claro: #eaa1b9;
+
+      --verde: #294b38;
+      --verde-claro: #617b5d;
+
+      --fundo: #fbf8f2;
+      --areia: #eee7dc;
+
+      --texto: #282923;
+      --cinza: #77766e;
+      --branco: #ffffff;
+
+      --titulo: "Playfair Display", Georgia, serif;
+      --fonte: "DM Sans", Arial, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: var(--fonte);
+      background: var(--fundo);
+      color: var(--texto);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 86%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--rosa);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-family: var(--titulo);
+      font-weight: 500;
+      font-size: clamp(32px, 4vw, 45px);
+      line-height: 1.2;
+    }
+
+    h2 em {
+      color: var(--rosa);
+      font-weight: 500;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      min-height: 50px;
+      padding: 0 24px;
+      font-size: 12px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      background: var(--rosa);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: var(--rosa-escuro);
+    }
+
+    /* =========================
+       BARRA SUPERIOR
+    ========================= */
+
+    .topbar {
+      background: var(--verde);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       CABEÇALHO
+    ========================= */
+
+    header {
+      height: 86px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--fundo);
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--rosa);
+    }
+
+    .logo-icon {
+      font-size: 38px;
+      color: #d94b78;
+    }
+
+    .logo-name {
+      font-family: var(--titulo);
+      font-size: 23px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .logo-name small {
+      display: block;
+      font-family: var(--fonte);
+      font-size: 8px;
+      letter-spacing: 4px;
+      color: var(--verde);
+      margin-top: 6px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    nav a {
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--rosa);
+    }
+
+    .nav-button {
+      background: var(--rosa);
+      color: white;
+      padding: 14px 20px;
+    }
+
+    .nav-button:hover {
+      background: var(--rosa-escuro);
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 28px;
+      color: var(--rosa);
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO PRINCIPAL
+    ========================= */
+
+    .hero {
+      min-height: 650px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background: var(--verde);
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(19,32,25,.86),
+          rgba(23,38,29,.63),
+          rgba(20,31,25,.15)
+        ),
+        url("assets/images/fachada-tres-marias.jpg")
+        center 54% / cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(760px, 80%);
+      margin-left: 11%;
+      padding: 80px 0;
+    }
+
+    .hero .eyebrow {
+      color: #f2b9ca;
+    }
+
+    .hero h1 {
+      font-family: var(--titulo);
+      font-weight: 500;
+      font-size: clamp(44px, 6vw, 74px);
+      line-height: 1.1;
+      margin: 22px 0;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 em {
+      color: var(--rosa-claro);
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 490px;
+      color: rgba(255,255,255,.86);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 32px;
+    }
+
+    .hero-link {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .hero-link:hover {
+      color: var(--rosa-claro);
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 65px;
+      font-size: 10px;
+      color: rgba(255,255,255,.75);
+      letter-spacing: 1px;
+    }
+
+    .hero-line {
+      width: 35px;
+      height: 1px;
+      background: var(--rosa-claro);
+    }
+
+    /* =========================
+       APRESENTAÇÃO
+    ========================= */
+
+    .intro {
+      display: grid;
+      grid-template-columns: 70px 1fr 1fr;
+      align-items: center;
+      gap: 25px;
+      padding-top: 95px;
+      padding-bottom: 95px;
+    }
+
+    .intro-icon {
+      font-size: 48px;
+      color: #d94b78;
+    }
+
+    .intro-text {
+      max-width: 430px;
+      color: var(--cinza);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    /* =========================
+       CATEGORIAS
+    ========================= */
+
+    .collection {
+      padding: 75px 0 110px;
+      border-top: 1px solid #e9e1d7;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading p {
+      max-width: 300px;
+      color: var(--cinza);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .category-card {
+      min-height: 370px;
+      position: relative;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      color: white;
+      transition: .3s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .category-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(22,32,25,.93),
+        rgba(22,32,25,.08)
+      );
+    }
+
+    .flowers {
+      background: linear-gradient(135deg,#a85b70,#5b293b 48%,#253d2c);
+    }
+
+    .plants {
+      background: linear-gradient(135deg,#9b9a6b,#36543c 55%,#172c22);
+    }
+
+    .vases {
+      background: linear-gradient(135deg,#c6a18b,#82634f 55%,#39362f);
+    }
+
+    .category-number {
+      position: absolute;
+      top: 23px;
+      left: 23px;
+      color: rgba(255,255,255,.8);
+      font-family: var(--titulo);
+      font-size: 18px;
+    }
+
+    .category-content {
+      position: relative;
+      padding: 28px;
+    }
+
+    .category-content span {
+      color: #f3bdcd;
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .category-content h3 {
+      font-family: var(--titulo);
+      font-size: 36px;
+      font-weight: 500;
+      margin: 10px 0;
+    }
+
+    .category-content p {
+      min-height: 60px;
+      color: rgba(255,255,255,.85);
+      font-size: 11px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .category-content a {
+      display: inline-block;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,.6);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .category-content a:hover {
+      color: var(--rosa-claro);
+    }
+
+    /* =========================
+       CHAMADA DE CONVERSÃO
+    ========================= */
+
+    .visit {
+      min-height: 440px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background: var(--verde);
+    }
+
+    .visit-image {
+      position: absolute;
+      inset: 0 0 0 48%;
+      background:
+        linear-gradient(rgba(41,75,56,.5),rgba(41,75,56,.5)),
+        url("assets/images/fachada-tres-marias.jpg")
+        center / cover no-repeat;
+      opacity: .65;
+    }
+
+    .visit-content {
+      position: relative;
+      z-index: 2;
+      width: min(520px, 75%);
+      margin-left: 11%;
+      padding: 80px 0;
+    }
+
+    .visit-content .eyebrow {
+      color: #f2b9ca;
+    }
+
+    .visit-content h2 {
+      font-size: clamp(35px, 4vw, 49px);
+      margin: 18px 0;
+    }
+
+    .visit-content h2 em {
+      color: var(--rosa-claro);
+    }
+
+    .visit-content p {
+      max-width: 440px;
+      margin-bottom: 28px;
+      color: rgba(255,255,255,.83);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .button-light {
+      background: white;
+      color: var(--rosa-escuro);
+    }
+
+    /* =========================
+       CONTATO E LOCALIZAÇÃO
+    ========================= */
+
+    .contact {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 80px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .contact-description {
+      margin-top: 15px;
+      color: var(--cinza);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 25px;
+    }
+
+    .detail {
+      display: flex;
+      gap: 14px;
+    }
+
+    .detail-icon {
+      font-size: 25px;
+      color: var(--rosa);
+    }
+
+    .detail small {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--verde);
+    }
+
+    .detail p {
+      margin-top: 9px;
+      color: var(--cinza);
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    .detail a:hover {
+      color: var(--rosa);
+    }
+
+    .contact-action {
+      grid-column: 1 / -1;
+    }
+
+    .contact-action p {
+      margin-top: 12px;
+      font-size: 10px;
+      color: var(--cinza);
+    }
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    footer {
+      min-height: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 25px 7%;
+      border-top: 1px solid #e9e1d7;
+    }
+
+    .footer-text {
+      font-size: 10px;
+      color: var(--cinza);
+    }
+
+    /* =========================
+       BOTÃO WHATSAPP FLUTUANTE
+    ========================= */
+
+    .whatsapp-float {
+      position: fixed;
+      z-index: 20;
+      right: 25px;
+      bottom: 24px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #218c59;
+      box-shadow: 0 7px 24px rgba(0,0,0,.22);
+      transition: .3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    /* =========================
+       RESPONSIVIDADE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      header {
+        padding: 0 5%;
+      }
+
+      nav {
+        gap: 18px;
+      }
+
+      .intro {
+        grid-template-columns: 45px 1fr;
+        gap: 20px;
+      }
+
+      .intro-text {
+        grid-column: 2;
+      }
+
+      .contact {
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .topbar {
+        font-size: 8px;
+      }
+
+      header {
+        height: 74px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 7% 22px;
+        background: var(--fundo);
+        box-shadow: 0 12px 18px rgba(0,0,0,.08);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 14px 5px;
+      }
+
+      nav .nav-button {
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .hero {
+        min-height: 640px;
+      }
+
+      .hero-image {
+        background-position: 58% center;
+      }
+
+      .hero-content {
+        width: 86%;
+        margin-left: 7%;
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 11vw, 58px);
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .hero-note {
+        margin-top: 45px;
+      }
+
+      .intro {
+        grid-template-columns: 35px 1fr;
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+
+      .intro-icon {
+        font-size: 35px;
+      }
+
+      .intro-text {
+        grid-column: 1 / -1;
+        margin-top: 10px;
+      }
+
+      .collection {
+        padding: 55px 0 75px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        min-height: 320px;
+      }
+
+      .visit {
+        min-height: 440px;
+      }
+
+      .visit-image {
+        inset: 0;
+        opacity: .25;
+      }
+
+      .visit-content {
+        width: 86%;
+        margin-left: 7%;
+      }
+
+      .visit-content h2 {
+        font-size: 38px;
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 75px;
+        padding-bottom: 75px;
+      }
+
+      .contact-details {
+        gap: 25px 15px;
+      }
+
+      .detail {
+        gap: 9px;
+      }
+
+      .detail p {
+        font-size: 10px;
+        overflow-wrap: anywhere;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 30px 7%;
+      }
+
+      .whatsapp-float {
+        right: 17px;
+        bottom: 17px;
+        width: 54px;
+        height: 54px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- BARRA SUPERIOR -->
+
+  <div class="topbar">
+    Um jeito especial de presentear, decorar e cultivar bons momentos.
+  </div>
+
+  <!-- CABEÇALHO -->
+
+  <header>
+
+    <a href="#inicio" class="logo">
+      <span class="logo-icon">✿</span>
+
+      <span class="logo-name">
+        Três Marias
+        <small>FLORICULTURA</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle"
+      aria-label="Abrir menu"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <nav id="menu">
+
+      <a href="#sobre">A floricultura</a>
+
+      <a href="#colecao">Flores e plantas</a>
+
+      <a href="#visite">Como chegar</a>
+
+      <a class="nav-button"
+        href="https://wa.me/5551989674521?text=Ol%C3%A1%2C%20Floricultura%20Tr%C3%AAs%20Marias!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+        target="_blank"
+        rel="noopener">
+        Fale conosco ↗
+      </a>
+
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-image"></div>
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          FLORICULTURA TRÊS MARIAS · PORTO ALEGRE
+        </span>
+
+        <h1>
+          Flores que encantam.<br>
+          <em>Momentos que florescem.</em>
+        </h1>
+
+        <p class="hero-description">
+          Encontre flores, plantas e vasos para tornar
+          uma ocasião ainda mais especial ou levar
+          mais vida para o seu ambiente.
+        </p>
+
+        <div class="hero-actions">
+
+          <a class="button button-primary"
+            href="https://wa.me/5551989674521?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Tr%C3%AAs%20Marias%20e%20gostaria%20de%20conhecer%20as%20op%C3%A7%C3%B5es."
+            target="_blank"
+            rel="noopener">
+            Peça informações pelo WhatsApp ↗
+          </a>
+
+          <a href="#colecao" class="hero-link">
+            Conheça a floricultura ↓
+          </a>
+
+        </div>
+
+        <div class="hero-note">
+          <span class="hero-line"></span>
+          Flores, plantas e vasos para ocasiões e ambientes
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- APRESENTAÇÃO -->
+
+    <section class="intro container" id="sobre">
+
+      <div class="intro-icon">✿</div>
+
+      <div>
+        <span class="eyebrow">UM TOQUE DE NATUREZA</span>
+
+        <h2>
+          Tem sempre um bom motivo<br>
+          para <em>florescer.</em>
+        </h2>
+      </div>
+
+      <p class="intro-text">
+        Um presente, uma celebração ou aquele cantinho
+        que merece mais vida.
+
+        Na Floricultura Três Marias, você encontra opções
+        para expressar carinho e deixar os ambientes
+        mais acolhedores.
+      </p>
+
+    </section>
+
+    <!-- CATEGORIAS -->
+
+    <section class="collection" id="colecao">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">
+              ESCOLHA O SEU JEITO DE FLORESCER
+            </span>
+
+            <h2>Natureza em cada detalhe.</h2>
+          </div>
+
+          <p>
+            Inspire-se e fale com a nossa equipe
+            para consultar as opções disponíveis.
+          </p>
+
+        </div>
+
+        <div class="category-grid">
+
+          <!-- FLORES -->
+
+          <article class="category-card flowers">
+
+            <span class="category-number">01</span>
+
+            <div class="category-content">
+
+              <span>PARA SURPREENDER</span>
+
+              <h3>Flores</h3>
+
+              <p>
+                Um gesto delicado para celebrar,
+                agradecer ou simplesmente demonstrar carinho.
+              </p>
+
+              <a href="https://wa.me/5551989674521?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20as%20op%C3%A7%C3%B5es%20de%20flores."
+                target="_blank"
+                rel="noopener">
+                Consultar opções ↗
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- PLANTAS -->
+
+          <article class="category-card plants">
+
+            <span class="category-number">02</span>
+
+            <div class="category-content">
+
+              <span>PARA TRAZER VIDA</span>
+
+              <h3>Plantas</h3>
+
+              <p>
+                Mais verde, aconchego e personalidade
+                para os seus espaços.
+              </p>
+
+              <a href="https://wa.me/5551989674521?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20as%20op%C3%A7%C3%B5es%20de%20plantas."
+                target="_blank"
+                rel="noopener">
+                Consultar opções ↗
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- VASOS -->
+
+          <article class="category-card vases">
+
+            <span class="category-number">03</span>
+
+            <div class="category-content">
+
+              <span>PARA COMPLETAR</span>
+
+              <h3>Vasos</h3>
+
+              <p>
+                Detalhes que valorizam suas plantas
+                e complementam a decoração.
+              </p>
+
+              <a href="https://wa.me/5551989674521?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20as%20op%C3%A7%C3%B5es%20de%20vasos."
+                target="_blank"
+                rel="noopener">
+                Consultar opções ↗
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CHAMADA DE CONVERSÃO -->
+
+    <section class="visit" id="visite">
+
+      <div class="visit-image"></div>
+
+      <div class="visit-content">
+
+        <span class="eyebrow">
+          VAMOS CONVERSAR?
+        </span>
+
+        <h2>
+          Seu próximo momento especial começa
+          <em>aqui.</em>
+        </h2>
+
+        <p>
+          Quer saber sobre disponibilidade, opções
+          ou encontrar algo especial?
+
+          Chame a Três Marias pelo WhatsApp
+          ou venha nos visitar.
+        </p>
+
+        <a class="button button-light"
+          href="https://wa.me/5551989674521?text=Ol%C3%A1%2C%20Tr%C3%AAs%20Marias!%20Gostaria%20de%20uma%20ajuda%20para%20escolher."
+          target="_blank"
+          rel="noopener">
+          Conversar pelo WhatsApp ↗
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- CONTATO -->
+
+    <section class="contact container">
+
+      <div>
+
+        <span class="eyebrow">
+          ESTAMOS NA VILA NOVA
+        </span>
+
+        <h2>
+          Venha nos <em>visitar.</em>
+        </h2>
+
+        <p class="contact-description">
+          Será um prazer receber você
+          na Floricultura Três Marias.
+        </p>
+
+      </div>
+
+      <div class="contact-details">
+
+        <div class="detail">
+
+          <span class="detail-icon">⌖</span>
+
+          <div>
+
+            <small>ENDEREÇO</small>
+
+            <p>
+              Av. Monte Cristo, 623<br>
+              Vila Nova · Porto Alegre/RS<br>
+              CEP 91750-690
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="detail">
+
+          <span class="detail-icon">☏</span>
+
+          <div>
+
+            <small>TELEFONE / WHATSAPP</small>
+
+            <p>
+              <a href="tel:+5551989674521">
+                (51) 98967-4521
+              </a>
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="detail">
+
+          <span class="detail-icon">◎</span>
+
+          <div>
+
+            <small>INSTAGRAM</small>
+
+            <p>
+              <a href="https://www.instagram.com/tresmarias_floricultura/"
+                target="_blank"
+                rel="noopener">
+                @tresmarias_floricultura ↗
+              </a>
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="contact-action">
+
+          <a class="button button-primary"
+            href="https://www.google.com/maps/search/?api=1&query=Av.%20Monte%20Cristo%2C%20623%2C%20Vila%20Nova%2C%20Porto%20Alegre%20-%20RS"
+            target="_blank"
+            rel="noopener">
+            Ver localização no mapa ↗
+          </a>
+
+          <p>
+            Consulte pelo WhatsApp os horários de atendimento
+            e a disponibilidade dos produtos.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+
+    <a href="#inicio" class="logo">
+
+      <span class="logo-icon">✿</span>
+
+      <span class="logo-name">
+        Três Marias
+        <small>FLORICULTURA</small>
+      </span>
+
+    </a>
+
+    <p class="footer-text">
+      Flores, plantas e vasos para ocasiões e ambientes.
+    </p>
+
+    <span class="footer-text">
+      © <span id="year"></span> Floricultura Três Marias
+    </span>
+
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+
+  <a class="whatsapp-float"
+    href="https://wa.me/5551989674521?text=Ol%C3%A1%2C%20Floricultura%20Tr%C3%AAs%20Marias!"
+    target="_blank"
+    rel="noopener"
+    aria-label="Fale pelo WhatsApp">
+
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+
+      <path d="M16.02 3.2A12.65 12.65 0 0 0 5.14 22.3L3.4 28.65l6.5-1.7a12.7 12.7 0 1 0 6.12-23.75Zm0 22.98c-1.9 0-3.76-.51-5.38-1.49l-.39-.23-3.86 1.01 1.03-3.76-.25-.39a10.5 10.5 0 1 1 8.85 4.86Zm5.76-7.87c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.22.32-.84 1.05-1.03 1.27-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.59-.96-.85-1.61-1.9-1.8-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.21.06-.4-.03-.56-.08-.16-.73-1.75-1-2.39-.27-.63-.54-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.68s1.16 3.11 1.32 3.33c.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.14-.3-.22-.62-.38Z"/>
+
+    </svg>
+
+  </a>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // Menu responsivo
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("#menu");
+
+    menuToggle.addEventListener("click", () => {
+
+      const aberto = menu.classList.toggle("active");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(aberto)
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        aberto ? "Fechar menu" : "Abrir menu"
+      );
+
+      menuToggle.textContent = aberto ? "✕" : "☰";
+
+    });
+
+    // Fecha o menu ao clicar em um link
+
+    document.querySelectorAll("#menu a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        menu.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.setAttribute("aria-label", "Abrir menu");
+
+        menuToggle.textContent = "☰";
+
+      });
+
+    });
+
+    // Ano automático no rodapé
+
+    document.querySelector("#year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
